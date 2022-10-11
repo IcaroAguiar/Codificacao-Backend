@@ -16,7 +16,10 @@ namespace Arquivos{
             {
                 Console.WriteLine(reader.ReadLine());
             }
+             
+    
 
         }
     }
+
 }
