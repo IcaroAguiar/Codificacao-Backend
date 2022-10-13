@@ -5,9 +5,6 @@ namespace Classes {
         public string? nome {get;set;}
         public string? endereco {get;set;}
 
-        public bool pagarImposto(bool imposto)
-        {
-            return imposto = true;
-        }
+       
     }
 }
