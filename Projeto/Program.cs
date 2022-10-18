@@ -1,6 +1,5 @@
 ﻿using Classes;
-using System;
-using System.IO;
+
 
 namespace Projeto
 {
@@ -8,53 +7,26 @@ namespace Projeto
     {
         static void Main(string[] args)
         {
-            PessoaFisica Icaro = new PessoaFisica();
-            Icaro.nome = "Icaro Aguiar";
-            Icaro.endereco = "Loteamento Engenho da Maravilha, 16, Vilarejo";
-            Icaro.cpf = "00000000000";
-            Icaro.dataNasc = "04/08/2003";
-
-            PessoaJuridica Oi = new PessoaJuridica();
-            Oi.nome = "Oi";
-            Oi.endereco = "Av.Antonio Carlos Magalhaes, XXX, Itaigara";
-            Oi.razaoSocial = "OI LTDA";
-            Oi.cnpj = "XXXXXXXXXXXXXXXXX";
+           
+            PessoaFisica Icaro = new PessoaFisica("Icaro Aguiar", "Cruz das almas, Bahia", "04/08/2003", "00000000000", 1100);
+            System.Console.WriteLine(Icaro.nome);
+            System.Console.WriteLine(Icaro.endereco);
+            System.Console.WriteLine(Icaro.cpf);
+            System.Console.WriteLine(Icaro.dataNasc);
+            System.Console.WriteLine(Icaro.ValidarData(Icaro.dataNasc!));
+            System.Console.WriteLine(Icaro.rendimentos);
 
 
-            string caminhoArquivo = @"C:\\Users\\ic_ag\\teste\\";
+            System.Console.WriteLine("-------------------------------------------------");
 
-            Console.WriteLine("Escolha a opção para gravação do arquivo: 1- Pessoa Física ou 2- Pessoa Juridica");
-            string? opcao = Console.ReadLine();
-            if (opcao == "1"){
-                Console.WriteLine("Digite o seu nome");
-
-                var nome = Console.ReadLine();
-
-                PessoaFisica novapf = new PessoaFisica();
-                novapf.nome = nome;
-
-
-
-                FileStream arquivo = File.Create(caminhoArquivo +novapf.nome);
-                
-            }
-            else if (opcao == "2")
-            {
-                Console.WriteLine("Digite o seu nome");
-
-                var nome = Console.ReadLine();
-
-                PessoaJuridica novapj = new PessoaJuridica();
-                novapj.nome = nome;
-
-
-                FileStream arquivo = File.Create(caminhoArquivo +novapj.nome);
-
-            }
-
-
-
-
+            PessoaJuridica Oi = new PessoaJuridica("Oi", "Salvador, Bahia", "Oi LTDA", "76.535.764/0001-43", 1000000);
+            System.Console.WriteLine(Oi.nome);
+            System.Console.WriteLine(Oi.endereco);
+            System.Console.WriteLine(Oi.razaoSocial);
+            System.Console.WriteLine(Oi.cnpj);
+            System.Console.WriteLine( Oi.ValidarCnpj(Oi.cnpj!));
+            System.Console.WriteLine(Oi.rendimentos);
+           
 
 
         }
