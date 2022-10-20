@@ -4,7 +4,7 @@ namespace Classes
     public class PessoaJuridica : Pessoa
     {
 
-        public PessoaJuridica(string? nome, string? endereco, string? razaoSocial, string? cnpj, int rendimentos) : base(nome, endereco, rendimentos)
+        public PessoaJuridica(string? nome, Endereco? endereco, string? razaoSocial, string? cnpj, int rendimentos) : base(nome, endereco, rendimentos)
         {
             this.nome = nome;
             this.endereco = endereco;

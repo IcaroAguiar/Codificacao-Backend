@@ -3,11 +3,11 @@ using Interface;
 namespace Classes {
     public abstract class Pessoa : IPessoa{ 
         public string? nome {get;set;}
-        public string? endereco {get;set;}
+        public Endereco? endereco {get;set;}
 
         public int rendimentos {get;set;}
         
-        public Pessoa(string? nome, string? endereco, int rendimentos)
+        public Pessoa(string? nome, Endereco? endereco, int rendimentos)
         {
             this.nome = nome;
             this.endereco = endereco;

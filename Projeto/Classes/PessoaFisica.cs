@@ -4,7 +4,7 @@ namespace Classes
 {
     public class PessoaFisica : Pessoa
     {
-        public PessoaFisica(string? nome, string? endereco, string? dataNasc, string? cpf, int rendimentos) : base(nome, endereco, rendimentos)
+        public PessoaFisica(string? nome, Endereco? endereco, string? dataNasc, string? cpf, int rendimentos) : base(nome, endereco, rendimentos)
         {
             this.nome = nome;
             this.endereco = endereco;
@@ -52,18 +52,37 @@ namespace Classes
 
         }
 
-        public bool ValidarData(string dataNasc )
+        public bool ValidarData(string dataNasc)
         {
             DateTime dataValor;
-           if (DateTime.TryParse(dataNasc, out dataValor)){
-            System.Console.WriteLine("Data válida");
-            return true;
-           } else{
+            if (DateTime.TryParse(dataNasc, out dataValor))
+            {
+                System.Console.WriteLine("Data válida");
+                return true;
+            }
+            else
+            {
+                System.Console.WriteLine("Data inválida");
+                return false;
+            }
+
+
+        }
+
+        public bool ValidarData(DateTime dataNasc)
+        {
+            DateTime dataAtual = DateTime.Today;
+            double anos = (dataAtual - dataNasc).TotalDays / 365;
+
+            if (anos >= 18)
+            {
+                System.Console.WriteLine("Data válida");
+                return true;
+            }
             System.Console.WriteLine("Data inválida");
             return false;
-           }
-            
         }
+
     }
 
 }
