@@ -2,20 +2,19 @@ using Interface;
 
 namespace Classes {
     public abstract class Pessoa : IPessoa{ 
+        // public Pessoa(string? nome, float rendimentos)
+        // {
+        //     this.nome = nome;
+        //     this.rendimentos = rendimentos;
+        // }
         public string? nome {get;set;}
         public Endereco? endereco {get;set;}
 
-        public int rendimentos {get;set;}
+        public float rendimentos {get;set;}
         
-        public Pessoa(string? nome, Endereco? endereco, int rendimentos)
-        {
-            this.nome = nome;
-            this.endereco = endereco;
-            this.rendimentos = rendimentos;
-        }
 
      
 
-        public abstract bool pagarImposto(bool imposto);
+        public abstract float pagarImposto(float rendimentos);
     }
 }

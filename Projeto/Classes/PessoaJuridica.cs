@@ -4,46 +4,48 @@ namespace Classes
     public class PessoaJuridica : Pessoa
     {
 
-        public PessoaJuridica(string? nome, Endereco? endereco, string? razaoSocial, string? cnpj, int rendimentos) : base(nome, endereco, rendimentos)
-        {
-            this.nome = nome;
-            this.endereco = endereco;
-            this.razaoSocial = razaoSocial;
-            this.cnpj = cnpj;
-            this.rendimentos = rendimentos;
-        }
+        // public PessoaJuridica(string? nome, string? razaoSocial, string? cnpj, float rendimentos) : base(nome, rendimentos)
+        // {
+        //     this.nome = nome;
+        //     this.endereco = endereco;
+        //     this.razaoSocial = razaoSocial;
+        //     this.cnpj = cnpj;
+        //     this.rendimentos = rendimentos;
+        // }
         public string? razaoSocial { get; set; }
         public string? cnpj { get; set; }
 
-        public override bool pagarImposto(bool imposto)
-        {
+        public override float pagarImposto(float rendimentos)
+        {   
+
+            float imposto;
             if (rendimentos <= 3000)
             {
-                System.Console.WriteLine("Imposto de 3%");
-                rendimentos = rendimentos * (3 / 100);
-                return imposto = true;
+               
+                imposto = rendimentos * (3 / 100);
+                return imposto;
             }
             else if (rendimentos >= 3000 && rendimentos <= 6000)
             {
-                System.Console.WriteLine("Imposto de 5%");
-                rendimentos = rendimentos * (5 / 100);
-                return imposto = true;
+                
+                imposto = rendimentos * (5 / 100);
+                return imposto;
             }
             else if (rendimentos >= 6000 && rendimentos <= 10000)
             {
-                System.Console.WriteLine("Imposto de 7%");
-                rendimentos = rendimentos * (7 / 100);
-                return imposto = true;
+                
+                imposto = rendimentos * (7 / 100);
+                return imposto;
             }
             else if (rendimentos > 10000)
             {
-                System.Console.WriteLine("Imposto de 9%");
-                rendimentos = rendimentos * (9 / 100);
-                return imposto = true;
+               
+                imposto = rendimentos * (9 / 100);
+                return imposto;
             }
             else
             {
-                return imposto = false;
+                return imposto = 0;
             }
 
 
