@@ -23,5 +23,19 @@ namespace Classes{
         // Console.Clear();
 
         }
+
+        public static void VerificaPasta(string path){
+           string pasta = path.Split("/")[0];
+
+            if (!Directory.Exists(pasta))
+            {
+                Directory.CreateDirectory(pasta);
+            }
+
+            if (!File.Exists(path))
+            {
+                using (File.Create(path)) { }
+            }
+        }
     }
 }
